@@ -556,5 +556,32 @@
     "delivered_at": "2026-06-27T11:54:35.484Z",
     "read_at": null,
     "channel": "inapp"
+  },
+  {
+    "id": 63,
+    "message_id": 24,
+    "user_id": 3,
+    "delivery_status": "delivered",
+    "delivered_at": "2026-06-27T18:18:54.306Z",
+    "read_at": null,
+    "channel": "inapp"
+  },
+  {
+    "id": 64,
+    "message_id": 24,
+    "user_id": 4,
+    "delivery_status": "delivered",
+    "delivered_at": "2026-06-27T18:18:54.306Z",
+    "read_at": null,
+    "channel": "inapp"
+  },
+  {
+    "id": 65,
+    "message_id": 24,
+    "user_id": 5,
+    "delivery_status": "delivered",
+    "delivered_at": "2026-06-27T18:18:54.306Z",
+    "read_at": null,
+    "channel": "inapp"
   }
 ]
