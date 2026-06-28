@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // Base path for GitHub Pages — change if your repo name is different
-  base: process.env.NODE_ENV === 'production' ? '/school-communication-portal/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/school-communication-portal2/' : '/',
   server: {
     port: 5173,
     proxy: {
