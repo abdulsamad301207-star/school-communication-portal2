@@ -6,49 +6,49 @@
 
 @layer base {
   :root {
-    /* Light Mode Tokens (Dull White, Brown, Sand Red) */
+    /* Light Mode Tokens (Dull White, Brown, Forest Green) */
     --background: 40 25% 93%;       /* Dull White */
     --foreground: 20 17% 14%;       /* Dark Brown Text */
     --card: 40 33% 99%;             /* Off-white */
     --card-foreground: 20 17% 14%;
     --popover: 40 33% 99%;
     --popover-foreground: 20 17% 14%;
-    --primary: 20 33% 27%;          /* Brown */
+    --primary: 162 48% 20%;         /* Forest Green */
     --primary-foreground: 40 25% 93%;
     --secondary: 20 20% 85%;        /* Light Brown */
-    --secondary-foreground: 20 33% 27%;
+    --secondary-foreground: 162 48% 20%;
     --muted: 40 18% 87%;            /* Dull Beige */
     --muted-foreground: 20 15% 45%;
-    --accent: 15 49% 47%;           /* Sand Red */
+    --accent: 162 48% 20%;          /* Forest Green Accent */
     --accent-foreground: 40 25% 93%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 40 25% 93%;
     --border: 40 15% 82%;
     --input: 40 15% 82%;
-    --ring: 20 33% 27%;
+    --ring: 162 48% 20%;
     --radius: 0.75rem;
   }
 
   .dark {
-    /* Dark Mode Tokens (Deep Sand Red, Gold) */
-    --background: 9 16% 9%;         /* Deep Sand Red */
+    /* Dark Mode Tokens (Brick Red, Gold) */
+    --background: 0 64% 17%;        /* Vibrant Dark Brick Red */
     --foreground: 40 38% 93%;       /* Warm White Text */
-    --card: 9 15% 13%;              /* Darker Sand Red */
+    --card: 0 64% 21%;              /* Slightly Lighter Brick Red */
     --card-foreground: 40 38% 93%;
-    --popover: 9 15% 13%;
+    --popover: 0 64% 21%;
     --popover-foreground: 40 38% 93%;
     --primary: 46 65% 52%;          /* Gold */
-    --primary-foreground: 9 16% 9%; /* Deep Sand Red */
-    --secondary: 9 13% 21%;         /* Muted Red/Brown */
+    --primary-foreground: 0 64% 17%;
+    --secondary: 0 64% 13%;         /* Darker Brick Red */
     --secondary-foreground: 40 38% 93%;
-    --muted: 9 13% 21%;             /* Muted Sand */
+    --muted: 0 64% 13%;             /* Muted Dark Brick */
     --muted-foreground: 40 20% 65%;
     --accent: 46 65% 52%;           /* Gold */
-    --accent-foreground: 9 16% 9%;
+    --accent-foreground: 0 64% 17%;
     --destructive: 0 80% 60%;
     --destructive-foreground: 40 38% 93%;
-    --border: 9 15% 25%;
-    --input: 9 15% 25%;
+    --border: 0 64% 25%;
+    --input: 0 64% 25%;
     --ring: 46 65% 52%;
   }
 
