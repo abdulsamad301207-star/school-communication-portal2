@@ -22,7 +22,7 @@ export default function History() {
   useEffect(() => { load(); }, [filter]);
 
   return (
-    <div className="min-h-screen bg-[#111111] flex">
+    <div className="min-h-screen bg-background flex">
       <Sidebar />
       <main className="flex-1 ml-64">
         <TopBar title="Message History" />
@@ -31,7 +31,7 @@ export default function History() {
           <div className="card mb-6">
             <div className="flex flex-wrap items-center gap-4">
               <div className="relative flex-1 min-w-[200px]">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={16} />
                 <input value={filter.search} onChange={e => setFilter({...filter, search: e.target.value})}
                   placeholder="Search messages..." className="input-field pl-10" />
               </div>
@@ -58,7 +58,7 @@ export default function History() {
 
           {/* Summary */}
           <div className="flex items-center justify-between mb-4">
-            <p className="text-sm text-gray-400">{messages.length} message{messages.length !== 1 ? 's' : ''} found</p>
+            <p className="text-sm text-muted-foreground">{messages.length} message{messages.length !== 1 ? 's' : ''} found</p>
           </div>
 
           <MessageTable messages={messages} showPagination={true} />

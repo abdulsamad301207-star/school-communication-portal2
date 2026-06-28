@@ -16,7 +16,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#111111] flex">
+    <div className="min-h-screen bg-background flex">
       <Sidebar />
       <main className="flex-1 ml-64">
         <TopBar title="Dashboard" />
@@ -53,9 +53,9 @@ export default function Dashboard() {
 
           {/* Recent Messages */}
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-bold text-white">Recent Communications</h2>
+            <h2 className="text-xl font-bold text-foreground">Recent Communications</h2>
             <div className="flex gap-3">
-              <select className="bg-[#1A1A1A] border border-gray-800 text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:border-[#FFB800] text-gray-300">
+              <select className="bg-card border border-border text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:border-accent text-foreground">
                 <option value="">All Types</option>
                 <option value="circular">Circulars</option>
                 <option value="attendance">Attendance</option>

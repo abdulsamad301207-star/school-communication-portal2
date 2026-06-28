@@ -1,30 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Light Mode Tokens (Crisp, High Integrity) */
+    --background: 240 10% 98%;      /* #F8FAFC */
+    --foreground: 240 10% 10%;      /* #1A1A1A */
+    --card: 0 0% 100%;              /* #FFFFFF */
+    --card-foreground: 240 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+    --primary: 244 47% 20%;         /* #1E1B4B (Navy) */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 90%;
+    --secondary-foreground: 244 47% 20%;
+    --muted: 240 5% 94%;
+    --muted-foreground: 240 5% 45%;
+    --accent: 25 95% 53%;           /* #F97316 (Orange) */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 85%;
+    --input: 240 6% 85%;
+    --ring: 244 47% 20%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark Mode Tokens (Deep, Professional) */
+    --background: 240 40% 7%;       /* #0F0F16 */
+    --foreground: 240 5% 96%;       /* #F5F5F5 */
+    --card: 240 25% 12%;            /* #171723 */
+    --card-foreground: 240 5% 96%;
+    --popover: 240 25% 12%;
+    --popover-foreground: 240 5% 96%;
+    --primary: 244 60% 45%;         /* Brighter Navy/Blue for dark mode */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 20% 18%;
+    --secondary-foreground: 240 5% 96%;
+    --muted: 240 20% 15%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 25 95% 53%;           /* #F97316 (Orange) */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 20% 22%;
+    --input: 240 20% 22%;
+    --ring: 244 60% 45%;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
   body {
-    @apply bg-[#111111] text-white antialiased font-sans;
-    font-family: 'Inter', sans-serif !important;
+    @apply bg-background text-foreground antialiased font-sans transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply h-10 px-5 rounded-lg bg-[#C0001A] text-white font-medium transition-colors hover:bg-red-700 flex items-center justify-center gap-2;
+    @apply h-10 px-5 rounded-lg bg-primary text-primary-foreground font-medium transition-all duration-200 hover:opacity-90 flex items-center justify-center gap-2 shadow-sm active:scale-95;
   }
   .btn-secondary {
-    @apply h-10 px-5 rounded-lg border border-gray-700 bg-transparent text-white font-medium transition-colors hover:bg-gray-800 flex items-center justify-center gap-2;
+    @apply h-10 px-5 rounded-lg border border-border bg-card text-foreground font-medium transition-all duration-200 hover:bg-muted flex items-center justify-center gap-2 active:scale-95;
   }
   .card {
-    @apply bg-[#1A1A1A] rounded-xl p-6 border border-gray-800 shadow-lg;
+    @apply bg-card text-card-foreground rounded-xl p-6 border border-border shadow-sm transition-colors duration-300;
   }
   .input-field {
-    @apply h-10 px-3 w-full rounded-lg border border-gray-700 bg-[#222222] text-white focus:outline-none focus:border-[#FFB800] focus:ring-1 focus:ring-[#FFB800] transition-colors;
+    @apply h-10 px-3 w-full rounded-lg border border-input bg-background text-foreground focus:outline-none focus:border-ring focus:ring-1 focus:ring-ring transition-colors duration-200;
   }
   .label-text {
-    @apply block text-sm font-medium text-gray-300 mb-1.5;
+    @apply block text-sm font-medium text-muted-foreground mb-1.5;
   }
 }

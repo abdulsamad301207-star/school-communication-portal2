@@ -1,23 +1,26 @@
 import { Bell, Search } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 export default function TopBar({ title }) {
   return (
-    <header className="h-16 bg-[#1A1A1A] border-b border-gray-800 flex items-center justify-between px-8 sticky top-0 z-40">
-      <h1 className="text-xl font-bold text-white">{title}</h1>
+    <header className="h-16 bg-card border-b border-border flex items-center justify-between px-8 sticky top-0 z-40 transition-colors duration-300">
+      <h1 className="text-xl font-bold font-heading text-foreground">{title}</h1>
       
       <div className="flex items-center gap-6">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
           <input 
             type="text" 
             placeholder="Search..." 
-            className="h-10 pl-10 pr-4 w-64 rounded-lg bg-[#111111] border border-gray-800 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#FFB800] transition-colors"
+            className="h-10 pl-10 pr-4 w-64 rounded-lg bg-background border border-input text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:border-ring focus:ring-1 focus:ring-ring transition-colors duration-200"
           />
         </div>
         
-        <button className="relative text-gray-400 hover:text-white transition-colors">
+        <ThemeToggle />
+        
+        <button className="relative text-muted-foreground hover:text-foreground transition-colors duration-200">
           <Bell size={20} />
-          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#C0001A] rounded-full"></span>
+          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-destructive rounded-full"></span>
         </button>
       </div>
     </header>

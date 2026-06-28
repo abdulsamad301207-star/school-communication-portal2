@@ -31,10 +31,10 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="w-64 fixed left-0 inset-y-0 bg-[#111111] border-r border-gray-800 flex flex-col z-50">
-      <div className="h-16 flex items-center px-6 border-b border-gray-800">
-        <div className="flex items-center gap-2 text-[#FFB800]">
-          <span className="font-bold text-lg text-white">SG Portal</span>
+    <aside className="w-64 fixed left-0 inset-y-0 bg-background border-r border-border flex flex-col z-50 transition-colors duration-300">
+      <div className="h-16 flex items-center px-6 border-b border-border">
+        <div className="flex items-center gap-2 text-primary">
+          <span className="font-bold text-lg font-heading text-foreground">SG Portal</span>
         </div>
       </div>
       
@@ -47,15 +47,15 @@ export default function Sidebar() {
               to={item.path}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                 active 
-                  ? 'bg-[#C0001A] text-white' 
-                  : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
+                  ? 'bg-primary text-primary-foreground shadow-sm' 
+                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
               }`}
             >
               <item.icon size={18} />
               <span className="flex-1">{item.name}</span>
               {item.badge > 0 && (
                 <span className={`min-w-[20px] h-5 px-1.5 rounded-full text-[11px] font-bold flex items-center justify-center animate-pulse ${
-                  active ? 'bg-white text-[#C0001A]' : 'bg-[#C0001A] text-white'
+                  active ? 'bg-primary-foreground text-primary' : 'bg-destructive text-destructive-foreground'
                 }`}>
                   {item.badge > 99 ? '99+' : item.badge}
                 </span>
@@ -65,19 +65,19 @@ export default function Sidebar() {
         })}
       </nav>
 
-      <div className="p-4 border-t border-gray-800">
+      <div className="p-4 border-t border-border bg-card/50">
         <div className="flex items-center gap-3 px-3 mb-4">
-          <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-xs font-bold text-white uppercase">
+          <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold uppercase">
             {user?.name?.charAt(0) || 'U'}
           </div>
           <div className="flex-1 min-w-0">
-            <div className="text-sm font-medium text-white truncate">{user?.name}</div>
-            <div className="text-xs text-gray-400 truncate capitalize">{user?.role?.replace('_', ' ')}</div>
+            <div className="text-sm font-medium text-foreground truncate">{user?.name}</div>
+            <div className="text-xs text-muted-foreground truncate capitalize">{user?.role?.replace('_', ' ')}</div>
           </div>
         </div>
         <button 
           onClick={handleLogout}
-          className="flex w-full items-center gap-3 px-3 py-2 text-sm font-medium text-red-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
+          className="flex w-full items-center gap-3 px-3 py-2 text-sm font-medium text-destructive hover:bg-destructive/10 rounded-lg transition-colors"
         >
           <LogOut size={18} />
           Logout

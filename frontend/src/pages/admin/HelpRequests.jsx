@@ -17,7 +17,7 @@ export default function HelpRequests() {
   const loading = helpRequests === null;
 
   return (
-    <div className="min-h-screen bg-[#111111] flex">
+    <div className="min-h-screen bg-background flex">
       <Sidebar />
       <main className="flex-1 ml-64">
         <TopBar title="Help Requests" />
@@ -26,12 +26,12 @@ export default function HelpRequests() {
           {/* Header */}
           <div className="flex items-start justify-between mb-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#C0001A]/20 text-[#C0001A] flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-primary/20 text-primary flex items-center justify-center">
                 <HelpCircle size={20} />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-white">Student Support</h2>
-                <p className="text-sm text-gray-400">Manage and resolve incoming help requests</p>
+                <h2 className="text-xl font-bold text-foreground">Student Support</h2>
+                <p className="text-sm text-muted-foreground">Manage and resolve incoming help requests</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -41,13 +41,13 @@ export default function HelpRequests() {
                 Live · refreshes every 15s
               </div>
               {lastFetchTime && (
-                <span className="text-xs text-gray-500">
+                <span className="text-xs text-muted-foreground">
                   Last updated: {lastFetchTime.toLocaleTimeString()}
                 </span>
               )}
               <button
                 onClick={fetchHelp}
-                className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white transition-colors"
+                className="p-2 rounded-lg bg-muted hover:bg-gray-700 text-muted-foreground hover:text-foreground transition-colors"
                 title="Refresh now"
               >
                 <RefreshCw size={14} />
@@ -57,28 +57,28 @@ export default function HelpRequests() {
 
           {/* Stats bar */}
           <div className="grid grid-cols-3 gap-4 mb-6">
-            <div className="bg-[#1A1A1A] border border-gray-800 rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-white">{helpRequests.length}</div>
-              <div className="text-xs text-gray-400 mt-1">Total</div>
+            <div className="bg-card border border-border rounded-xl p-4 text-center">
+              <div className="text-2xl font-bold text-foreground">{helpRequests.length}</div>
+              <div className="text-xs text-muted-foreground mt-1">Total</div>
             </div>
             <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-4 text-center">
               <div className="text-2xl font-bold text-amber-400">{openCount}</div>
-              <div className="text-xs text-gray-400 mt-1">Open</div>
+              <div className="text-xs text-muted-foreground mt-1">Open</div>
             </div>
             <div className="bg-green-500/5 border border-green-500/20 rounded-xl p-4 text-center">
               <div className="text-2xl font-bold text-green-400">
                 {helpRequests.filter(r => r.status === 'resolved').length}
               </div>
-              <div className="text-xs text-gray-400 mt-1">Resolved</div>
+              <div className="text-xs text-muted-foreground mt-1">Resolved</div>
             </div>
           </div>
 
           {/* Requests list */}
-          <div className="bg-[#1A1A1A] border border-gray-800 rounded-2xl overflow-hidden">
+          <div className="bg-card border border-border rounded-2xl overflow-hidden">
             {loading ? (
-              <div className="p-8 text-center text-gray-500">Loading requests...</div>
+              <div className="p-8 text-center text-muted-foreground">Loading requests...</div>
             ) : helpRequests.length === 0 ? (
-              <div className="p-12 text-center text-gray-500">
+              <div className="p-12 text-center text-muted-foreground">
                 <HelpCircle size={40} className="mx-auto mb-3 opacity-20" />
                 No help requests yet.
               </div>
@@ -92,7 +92,7 @@ export default function HelpRequests() {
                       className={`p-5 flex gap-5 transition-all duration-500 ${
                         isNew
                           ? 'bg-amber-500/5 border-l-4 border-l-amber-400'
-                          : 'hover:bg-[#222]'
+                          : 'hover:bg-muted'
                       }`}
                     >
                       <div className="shrink-0 pt-1">
@@ -110,15 +110,15 @@ export default function HelpRequests() {
                         <div className="flex justify-between items-start mb-2">
                           <div>
                             <div className="flex items-center gap-2">
-                              <h3 className="text-base font-bold text-white leading-tight">{req.subject}</h3>
+                              <h3 className="text-base font-bold text-foreground leading-tight">{req.subject}</h3>
                               {isNew && (
                                 <span className="flex items-center gap-1 bg-amber-500 text-black text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide animate-bounce">
                                   <Zap size={10} /> New
                                 </span>
                               )}
                             </div>
-                            <div className="text-xs text-gray-400 mt-1 flex gap-2 items-center flex-wrap">
-                              <span className="font-medium text-gray-300">{req.user_name}</span>
+                            <div className="text-xs text-muted-foreground mt-1 flex gap-2 items-center flex-wrap">
+                              <span className="font-medium text-foreground">{req.user_name}</span>
                               <span>•</span>
                               <span className="capitalize">{req.user_role?.replace('_', ' ')}</span>
                               <span>•</span>
@@ -138,21 +138,21 @@ export default function HelpRequests() {
                         </div>
 
                         {/* Sender Details Card */}
-                        <div className="bg-[#161616] border border-gray-800 rounded-lg p-3 mb-3 flex flex-wrap gap-x-6 gap-y-1 text-xs">
-                          <div><span className="text-gray-500">From:</span> <span className="text-gray-200 font-medium">{req.user_name}</span></div>
-                          <div><span className="text-gray-500">Role:</span> <span className="text-gray-200 capitalize">{req.user_role?.replace('_', ' ')}</span></div>
+                        <div className="bg-card border border-border rounded-lg p-3 mb-3 flex flex-wrap gap-x-6 gap-y-1 text-xs">
+                          <div><span className="text-muted-foreground">From:</span> <span className="text-gray-200 font-medium">{req.user_name}</span></div>
+                          <div><span className="text-muted-foreground">Role:</span> <span className="text-gray-200 capitalize">{req.user_role?.replace('_', ' ')}</span></div>
                           {req.user_email && req.user_email !== 'N/A' && (
-                            <div><span className="text-gray-500">Email:</span> <span className="text-blue-400">{req.user_email}</span></div>
+                            <div><span className="text-muted-foreground">Email:</span> <span className="text-blue-400">{req.user_email}</span></div>
                           )}
                           {req.user_phone && req.user_phone !== 'N/A' && req.user_phone !== '' && (
-                            <div><span className="text-gray-500">Phone:</span> <span className="text-gray-200">{req.user_phone}</span></div>
+                            <div><span className="text-muted-foreground">Phone:</span> <span className="text-gray-200">{req.user_phone}</span></div>
                           )}
                           {req.student_name && (
-                            <div><span className="text-gray-500">Student:</span> <span className="text-[#FFB800] font-medium">{req.student_name}</span> <span className="text-gray-500">({req.student_class} · {req.student_roll})</span></div>
+                            <div><span className="text-muted-foreground">Student:</span> <span className="text-accent font-medium">{req.student_name}</span> <span className="text-muted-foreground">({req.student_class} · {req.student_roll})</span></div>
                           )}
                         </div>
 
-                        <div className="bg-[#111] border border-gray-800 rounded-xl p-4 text-sm text-gray-300 whitespace-pre-wrap">
+                        <div className="bg-background border border-border rounded-xl p-4 text-sm text-foreground whitespace-pre-wrap">
                           {req.message}
                         </div>
                       </div>

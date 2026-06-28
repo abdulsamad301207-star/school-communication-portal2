@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
     delete axios.defaults.headers.common['Authorization'];
   };
 
-  if (loading) return <div className="min-h-screen flex items-center justify-center bg-[#111111] text-white">Loading...</div>;
+  if (loading) return <div className="min-h-screen flex items-center justify-center bg-background text-foreground">Loading...</div>;
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>

@@ -26,33 +26,33 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen flex bg-[#111111]">
+    <div className="min-h-screen flex bg-background">
       {/* Left panel */}
-      <div className="hidden lg:flex flex-1 flex-col justify-center items-center p-12 bg-gradient-to-br from-[#111111] to-[#1A1A1A] border-r border-gray-800">
+      <div className="hidden lg:flex flex-1 flex-col justify-center items-center p-12 bg-gradient-to-br from-background to-card border-r border-border">
         <div className="max-w-md text-center">
-          <div className="w-20 h-20 mx-auto rounded-2xl bg-[#C0001A] flex items-center justify-center mb-8 shadow-2xl shadow-red-900/20">
-            <Lock className="text-white w-10 h-10" />
+          <div className="w-20 h-20 mx-auto rounded-2xl bg-primary flex items-center justify-center mb-8 shadow-2xl shadow-primary/20">
+            <Lock className="text-primary-foreground w-10 h-10" />
           </div>
-          <h1 className="text-4xl font-bold text-white mb-4">Staff Portal</h1>
-          <p className="text-gray-400 text-lg mb-12">Manage all school communication securely from one centralized dashboard.</p>
+          <h1 className="text-4xl font-bold font-heading text-foreground mb-4">Staff Portal</h1>
+          <p className="text-muted-foreground text-lg mb-12">Manage all school communication securely from one centralized dashboard.</p>
           <div className="space-y-4 text-left">
-            <div className="flex items-center gap-3 text-gray-300"><span className="text-[#FFB800]">✓</span> Compose rich circulars</div>
-            <div className="flex items-center gap-3 text-gray-300"><span className="text-[#FFB800]">✓</span> Automated attendance alerts</div>
-            <div className="flex items-center gap-3 text-gray-300"><span className="text-[#FFB800]">✓</span> Track live delivery status</div>
+            <div className="flex items-center gap-3 text-foreground"><span className="text-accent">✓</span> Compose rich circulars</div>
+            <div className="flex items-center gap-3 text-foreground"><span className="text-accent">✓</span> Automated attendance alerts</div>
+            <div className="flex items-center gap-3 text-foreground"><span className="text-accent">✓</span> Track live delivery status</div>
           </div>
         </div>
       </div>
 
       {/* Right panel */}
-      <div className="flex-1 flex flex-col justify-center p-8 sm:p-12 lg:p-24 relative bg-[#0A0A0A]">
+      <div className="flex-1 flex flex-col justify-center p-8 sm:p-12 lg:p-24 relative bg-background">
         <div className="w-full max-w-sm mx-auto">
           <div className="mb-10">
-            <h2 className="text-3xl font-bold text-white mb-2">Welcome back</h2>
-            <p className="text-gray-400">Sign in to your staff account</p>
+            <h2 className="text-3xl font-bold font-heading text-foreground mb-2">Welcome back</h2>
+            <p className="text-muted-foreground">Sign in to your staff account</p>
           </div>
 
           {error && (
-            <div className="mb-6 p-3 rounded-lg bg-red-900/30 border border-red-500/50 text-red-400 text-sm">
+            <div className="mb-6 p-3 rounded-lg bg-destructive/10 border border-destructive/50 text-destructive text-sm">
               {error}
             </div>
           )}
@@ -86,19 +86,19 @@ export default function AdminLogin() {
             </button>
           </form>
 
-          <div className="mt-8 pt-8 border-t border-gray-800">
-            <div className="text-sm text-gray-400 mb-3">Demo Credentials:</div>
+          <div className="mt-8 pt-8 border-t border-border">
+            <div className="text-sm text-muted-foreground mb-3">Demo Credentials:</div>
             <div className="flex gap-2">
-              <button type="button" onClick={() => fillDemo('admin@sgei.edu.in', 'Admin@123')} className="px-3 py-1.5 text-xs font-medium rounded bg-[#1A1A1A] border border-gray-700 hover:border-[#FFB800] transition-colors text-white">Admin</button>
-              <button type="button" onClick={() => fillDemo('teacher@sgei.edu.in', 'Teacher@123')} className="px-3 py-1.5 text-xs font-medium rounded bg-[#1A1A1A] border border-gray-700 hover:border-[#FFB800] transition-colors text-white">Teacher</button>
+              <button type="button" onClick={() => fillDemo('admin@sgei.edu.in', 'Admin@123')} className="px-3 py-1.5 text-xs font-medium rounded bg-card border border-border hover:border-accent transition-colors text-foreground">Admin</button>
+              <button type="button" onClick={() => fillDemo('teacher@sgei.edu.in', 'Teacher@123')} className="px-3 py-1.5 text-xs font-medium rounded bg-card border border-border hover:border-accent transition-colors text-foreground">Teacher</button>
             </div>
           </div>
 
           <div className="mt-6 flex items-center justify-between text-sm">
-            <Link to="/" className="flex items-center gap-1.5 text-gray-400 hover:text-white transition-colors">
+            <Link to="/" className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors">
               <Home size={14} /> Back to Home
             </Link>
-            <Link to="/login" className="text-[#FFB800] hover:text-amber-400 font-medium transition-colors">
+            <Link to="/login" className="text-accent hover:text-accent-foreground font-medium transition-colors">
               Parent / Student Portal →
             </Link>
           </div>

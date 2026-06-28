@@ -28,7 +28,7 @@ export default function Settings() {
   };
 
   return (
-    <div className="min-h-screen bg-[#111111] flex">
+    <div className="min-h-screen bg-background flex">
       <Sidebar />
       <main className="flex-1 ml-64">
         <TopBar title="Settings" />
@@ -42,8 +42,8 @@ export default function Settings() {
           {/* School Profile */}
           <div className="card mb-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-[#FFB800]/10 text-[#FFB800] flex items-center justify-center"><School size={20} /></div>
-              <h2 className="text-lg font-bold text-white">School Profile</h2>
+              <div className="w-10 h-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center"><School size={20} /></div>
+              <h2 className="text-lg font-bold text-foreground">School Profile</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
@@ -76,8 +76,8 @@ export default function Settings() {
           {/* Notification Preferences */}
           <div className="card mb-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-[#C0001A]/10 text-[#C0001A] flex items-center justify-center"><Bell size={20} /></div>
-              <h2 className="text-lg font-bold text-white">Notification Preferences</h2>
+              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center"><Bell size={20} /></div>
+              <h2 className="text-lg font-bold text-foreground">Notification Preferences</h2>
             </div>
             <div className="space-y-4">
               {[
@@ -86,16 +86,16 @@ export default function Settings() {
                 { key: 'dailyDigest', label: 'Daily digest report', desc: 'Receive a daily summary of all communication activity.' },
                 { key: 'parentReadReceipts', label: 'Parent read receipts', desc: 'Track when parents open and read messages.' }
               ].map(item => (
-                <label key={item.key} className="flex items-center justify-between p-4 rounded-lg bg-[#222] border border-gray-800 hover:border-gray-700 cursor-pointer transition-colors">
+                <label key={item.key} className="flex items-center justify-between p-4 rounded-lg bg-muted border border-border hover:border-border cursor-pointer transition-colors">
                   <div>
-                    <div className="text-sm font-medium text-white">{item.label}</div>
-                    <div className="text-xs text-gray-500 mt-0.5">{item.desc}</div>
+                    <div className="text-sm font-medium text-foreground">{item.label}</div>
+                    <div className="text-xs text-muted-foreground mt-0.5">{item.desc}</div>
                   </div>
                   <div className="relative">
                     <input type="checkbox" checked={notifications[item.key]}
                       onChange={() => setNotifications(prev => ({...prev, [item.key]: !prev[item.key]}))}
                       className="sr-only" />
-                    <div className={`w-11 h-6 rounded-full transition-colors ${notifications[item.key] ? 'bg-[#C0001A]' : 'bg-gray-700'}`}></div>
+                    <div className={`w-11 h-6 rounded-full transition-colors ${notifications[item.key] ? 'bg-primary' : 'bg-gray-700'}`}></div>
                     <div className={`absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full transition-transform ${notifications[item.key] ? 'translate-x-5' : 'translate-x-0'}`}></div>
                   </div>
                 </label>
@@ -107,7 +107,7 @@ export default function Settings() {
           <div className="card mb-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg bg-blue-900/20 text-blue-500 flex items-center justify-center"><Shield size={20} /></div>
-              <h2 className="text-lg font-bold text-white">Account Details</h2>
+              <h2 className="text-lg font-bold text-foreground">Account Details</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>

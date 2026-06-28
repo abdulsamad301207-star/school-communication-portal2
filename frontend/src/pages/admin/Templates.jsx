@@ -39,22 +39,22 @@ export default function Templates() {
   };
 
   return (
-    <div className="min-h-screen bg-[#111111] flex">
+    <div className="min-h-screen bg-background flex">
       <Sidebar />
       <main className="flex-1 ml-64">
         <TopBar title="Message Templates" />
         <div className="p-8">
           <div className="flex justify-between items-center mb-6">
-            <p className="text-gray-400">Create reusable templates for frequent messages.</p>
+            <p className="text-muted-foreground">Create reusable templates for frequent messages.</p>
             <button onClick={startNew} className="btn-primary"><Plus size={18} /> New Template</button>
           </div>
 
           {/* Edit / Create Modal */}
           {editing && (
-            <div className="card mb-8 border-[#FFB800]/30">
+            <div className="card mb-8 border-accent/30">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-lg font-bold text-white">{editing === 'new' ? 'Create Template' : 'Edit Template'}</h3>
-                <button onClick={() => setEditing(null)} className="text-gray-500 hover:text-white"><X size={20} /></button>
+                <h3 className="text-lg font-bold text-foreground">{editing === 'new' ? 'Create Template' : 'Edit Template'}</h3>
+                <button onClick={() => setEditing(null)} className="text-muted-foreground hover:text-foreground"><X size={20} /></button>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div>
@@ -91,19 +91,19 @@ export default function Templates() {
           {/* Template Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {templates.map(t => (
-              <div key={t.id} className="card hover:border-gray-700 transition-colors group">
+              <div key={t.id} className="card hover:border-border transition-colors group">
                 <div className="flex items-start justify-between mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#C0001A]/10 text-[#C0001A] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
                     <FileText size={20} />
                   </div>
                   <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button onClick={() => startEdit(t)} className="p-1.5 rounded hover:bg-gray-800 text-gray-400 hover:text-white"><Pencil size={14} /></button>
-                    <button onClick={() => handleDelete(t.id)} className="p-1.5 rounded hover:bg-gray-800 text-gray-400 hover:text-red-400"><Trash2 size={14} /></button>
+                    <button onClick={() => startEdit(t)} className="p-1.5 rounded hover:bg-muted text-muted-foreground hover:text-foreground"><Pencil size={14} /></button>
+                    <button onClick={() => handleDelete(t.id)} className="p-1.5 rounded hover:bg-muted text-muted-foreground hover:text-red-400"><Trash2 size={14} /></button>
                   </div>
                 </div>
-                <h3 className="font-bold text-white mb-1">{t.name}</h3>
-                <p className="text-xs text-[#FFB800] uppercase font-medium tracking-wider mb-2">{t.message_type}</p>
-                <p className="text-sm text-gray-400 truncate">{t.subject}</p>
+                <h3 className="font-bold text-foreground mb-1">{t.name}</h3>
+                <p className="text-xs text-accent uppercase font-medium tracking-wider mb-2">{t.message_type}</p>
+                <p className="text-sm text-muted-foreground truncate">{t.subject}</p>
               </div>
             ))}
           </div>

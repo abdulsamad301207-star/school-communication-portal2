@@ -60,7 +60,7 @@ export default function Compose() {
   };
 
   return (
-    <div className="min-h-screen bg-[#111111] flex">
+    <div className="min-h-screen bg-background flex">
       <Sidebar />
       <main className="flex-1 ml-64">
         <TopBar title="Compose Message" />
@@ -80,7 +80,7 @@ export default function Compose() {
                 <div className="flex flex-wrap gap-2">
                   {['circular','fee','attendance','exam','event','custom'].map(t => (
                     <button key={t} onClick={() => setMessageType(t)}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium capitalize transition-colors ${messageType === t ? 'bg-[#C0001A] text-white' : 'bg-[#222] text-gray-400 hover:text-white border border-gray-700'}`}>
+                      className={`px-4 py-2 rounded-lg text-sm font-medium capitalize transition-colors ${messageType === t ? 'bg-primary text-foreground' : 'bg-muted text-muted-foreground hover:text-foreground border border-border'}`}>
                       {t}
                     </button>
                   ))}
@@ -100,11 +100,11 @@ export default function Compose() {
                   <label className="label-text mb-0">Message Body</label>
                   <div className="flex gap-2">
                     <button onClick={handleAiSuggest} disabled={loadingAi}
-                      className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-[#FFB800]/10 text-[#FFB800] hover:bg-[#FFB800]/20 border border-[#FFB800]/30 transition-colors">
+                      className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-accent/10 text-accent hover:bg-accent/20 border border-accent/30 transition-colors">
                       <Sparkles size={14} /> {loadingAi ? 'Thinking...' : 'AI Improve'}
                     </button>
                     <button onClick={() => setShowPreview(!showPreview)}
-                      className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-800 text-gray-300 hover:text-white border border-gray-700 transition-colors">
+                      className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-muted text-foreground hover:text-foreground border border-border transition-colors">
                       <Eye size={14} /> Preview
                     </button>
                   </div>
@@ -116,14 +116,14 @@ export default function Compose() {
 
               {/* AI Suggestion */}
               {aiSuggestion && (
-                <div className="card border-[#FFB800]/30">
+                <div className="card border-accent/30">
                   <div className="flex justify-between items-center mb-3">
-                    <div className="flex items-center gap-2 text-[#FFB800] font-medium text-sm">
+                    <div className="flex items-center gap-2 text-accent font-medium text-sm">
                       <Sparkles size={16} /> AI Suggestion
                     </div>
-                    <button onClick={() => setAiSuggestion('')} className="text-gray-500 hover:text-white"><X size={16} /></button>
+                    <button onClick={() => setAiSuggestion('')} className="text-muted-foreground hover:text-foreground"><X size={16} /></button>
                   </div>
-                  <p className="text-gray-300 text-sm whitespace-pre-wrap mb-4">{aiSuggestion}</p>
+                  <p className="text-foreground text-sm whitespace-pre-wrap mb-4">{aiSuggestion}</p>
                   <button onClick={() => { setBodyHtml(aiSuggestion); setAiSuggestion(''); }}
                     className="btn-primary h-8 px-4 text-xs">Apply Suggestion</button>
                 </div>
@@ -138,7 +138,7 @@ export default function Compose() {
                     <hr className="mb-4" />
                     <div className="text-sm leading-relaxed whitespace-pre-wrap">{bodyHtml || '(Empty body)'}</div>
                     <hr className="mt-6 mb-3" />
-                    <p className="text-xs text-gray-500">Sri Gowthami Educational Institutions</p>
+                    <p className="text-xs text-muted-foreground">Sri Gowthami Educational Institutions</p>
                   </div>
                 </div>
               )}
@@ -148,21 +148,21 @@ export default function Compose() {
             <div className="space-y-6">
               {/* Recipients */}
               <div className="card">
-                <h3 className="text-sm font-bold text-white mb-4">Select Recipients</h3>
+                <h3 className="text-sm font-bold text-foreground mb-4">Select Recipients</h3>
                 <div className="space-y-2 max-h-48 overflow-y-auto">
                   {groups.map(g => (
-                    <label key={g.id} className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-[#222] cursor-pointer transition-colors">
+                    <label key={g.id} className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-muted cursor-pointer transition-colors">
                       <input type="checkbox" checked={selectedGroups.includes(g.id)} onChange={() => toggleGroup(g.id)}
-                        className="w-4 h-4 rounded accent-[#C0001A]" />
+                        className="w-4 h-4 rounded accent-primary" />
                       <div className="flex-1 min-w-0">
                         <div className="text-sm font-medium text-gray-200 truncate">{g.name}</div>
-                        <div className="text-xs text-gray-500">{g.member_count} members</div>
+                        <div className="text-xs text-muted-foreground">{g.member_count} members</div>
                       </div>
                     </label>
                   ))}
                 </div>
                 {selectedGroups.length > 0 && (
-                  <div className="mt-3 pt-3 border-t border-gray-800 text-xs text-[#FFB800]">
+                  <div className="mt-3 pt-3 border-t border-border text-xs text-accent">
                     {selectedGroups.reduce((s, id) => s + (groups.find(g => g.id === id)?.member_count || 0), 0)} total recipients selected
                   </div>
                 )}
@@ -170,13 +170,13 @@ export default function Compose() {
 
               {/* Quick Templates */}
               <div className="card">
-                <h3 className="text-sm font-bold text-white mb-4">Quick Templates</h3>
+                <h3 className="text-sm font-bold text-foreground mb-4">Quick Templates</h3>
                 <div className="space-y-2">
                   {templates.slice(0, 4).map(t => (
                     <button key={t.id} onClick={() => applyTemplate(t)}
-                      className="w-full text-left p-3 rounded-lg bg-[#222] hover:bg-[#2a2a2a] border border-gray-800 transition-colors">
+                      className="w-full text-left p-3 rounded-lg bg-muted hover:brightness-110 border border-border transition-colors">
                       <div className="text-sm font-medium text-gray-200 truncate">{t.name}</div>
-                      <div className="text-xs text-gray-500 mt-1 capitalize">{t.message_type}</div>
+                      <div className="text-xs text-muted-foreground mt-1 capitalize">{t.message_type}</div>
                     </button>
                   ))}
                 </div>

@@ -80,14 +80,18 @@ function AppRoutes() {
   );
 }
 
+import { ThemeProvider } from './context/ThemeContext';
+
 export default function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter basename={BASE_PATH}>
-        <HelpProvider>
-          <AppRoutes />
-        </HelpProvider>
-      </BrowserRouter>
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <BrowserRouter basename={BASE_PATH}>
+          <HelpProvider>
+            <AppRoutes />
+          </HelpProvider>
+        </BrowserRouter>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }

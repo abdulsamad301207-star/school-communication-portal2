@@ -20,24 +20,24 @@ export default function Recipients() {
     load();
   };
 
-  const colors = ['bg-[#C0001A]', 'bg-[#FFB800]', 'bg-blue-600', 'bg-green-600', 'bg-purple-600', 'bg-pink-600'];
+  const colors = ['bg-primary', 'bg-accent', 'bg-blue-600', 'bg-green-600', 'bg-purple-600', 'bg-pink-600'];
 
   return (
-    <div className="min-h-screen bg-[#111111] flex">
+    <div className="min-h-screen bg-background flex">
       <Sidebar />
       <main className="flex-1 ml-64">
         <TopBar title="Recipients & Groups" />
         <div className="p-8">
           <div className="flex justify-between items-center mb-6">
-            <p className="text-gray-400">Manage recipient groups for targeted messaging.</p>
+            <p className="text-muted-foreground">Manage recipient groups for targeted messaging.</p>
             <button onClick={() => setShowForm(true)} className="btn-primary"><Plus size={18} /> New Group</button>
           </div>
 
           {showForm && (
-            <div className="card mb-8 border-[#FFB800]/30">
+            <div className="card mb-8 border-accent/30">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-lg font-bold text-white">Create New Group</h3>
-                <button onClick={() => setShowForm(false)} className="text-gray-500 hover:text-white"><X size={20} /></button>
+                <h3 className="text-lg font-bold text-foreground">Create New Group</h3>
+                <button onClick={() => setShowForm(false)} className="text-muted-foreground hover:text-foreground"><X size={20} /></button>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div>
@@ -58,19 +58,19 @@ export default function Recipients() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {groups.map((g, i) => (
-              <div key={g.id} className="card hover:border-gray-700 transition-colors">
+              <div key={g.id} className="card hover:border-border transition-colors">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className={`w-12 h-12 rounded-xl ${colors[i % colors.length]} flex items-center justify-center text-white`}>
+                  <div className={`w-12 h-12 rounded-xl ${colors[i % colors.length]} flex items-center justify-center text-foreground`}>
                     <UsersIcon size={22} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-white">{g.name}</h3>
-                    <p className="text-xs text-gray-500">{g.description}</p>
+                    <h3 className="font-bold text-foreground">{g.name}</h3>
+                    <p className="text-xs text-muted-foreground">{g.description}</p>
                   </div>
                 </div>
-                <div className="flex items-center justify-between pt-4 border-t border-gray-800">
-                  <span className="text-2xl font-bold text-white">{g.member_count}</span>
-                  <span className="text-xs text-gray-500 uppercase tracking-wider">Members</span>
+                <div className="flex items-center justify-between pt-4 border-t border-border">
+                  <span className="text-2xl font-bold text-foreground">{g.member_count}</span>
+                  <span className="text-xs text-muted-foreground uppercase tracking-wider">Members</span>
                 </div>
               </div>
             ))}

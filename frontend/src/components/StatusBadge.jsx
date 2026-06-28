@@ -3,9 +3,9 @@ export default function StatusBadge({ status }) {
     sent: 'bg-green-900/30 text-green-400 border border-green-800',
     delivered: 'bg-green-900/30 text-green-400 border border-green-800',
     pending: 'bg-amber-900/30 text-amber-400 border border-amber-800',
-    scheduled: 'bg-[#FFB800]/20 text-[#FFB800] border border-[#FFB800]/30',
+    scheduled: 'bg-accent/20 text-accent border border-accent/30',
     failed: 'bg-red-900/30 text-red-400 border border-red-800',
-    draft: 'bg-gray-800 text-gray-300 border border-gray-700',
+    draft: 'bg-muted text-foreground border border-border',
     read: 'bg-blue-900/30 text-blue-400 border border-blue-800'
   };
 

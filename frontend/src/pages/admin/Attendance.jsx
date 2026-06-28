@@ -67,7 +67,7 @@ export default function Attendance() {
   const total = Object.keys(records).length;
 
   return (
-    <div className="min-h-screen bg-[#111111] flex">
+    <div className="min-h-screen bg-background flex">
       <Sidebar />
       <main className="flex-1 ml-64">
         <TopBar title="Attendance" />
@@ -105,7 +105,7 @@ export default function Attendance() {
               <div className="card p-0 overflow-hidden">
                 <table className="w-full text-left">
                   <thead>
-                    <tr className="bg-[#0A0A0A] border-b border-gray-800 text-sm text-gray-400">
+                    <tr className="bg-background border-b border-border text-sm text-muted-foreground">
                       <th className="p-4 pl-6 font-medium">Roll No.</th>
                       <th className="p-4 font-medium">Student Name</th>
                       <th className="p-4 font-medium">Class</th>
@@ -114,14 +114,14 @@ export default function Attendance() {
                   </thead>
                   <tbody className="divide-y divide-gray-800">
                     {students.length === 0 ? (
-                      <tr><td colSpan="4" className="p-8 text-center text-gray-500">No students found for this class. Select a different class or check data.</td></tr>
+                      <tr><td colSpan="4" className="p-8 text-center text-muted-foreground">No students found for this class. Select a different class or check data.</td></tr>
                     ) : students.map(s => {
                       const status = records[s.roll_number] || 'present';
                       return (
-                        <tr key={s.id} className="hover:bg-[#222] transition-colors">
-                          <td className="p-4 pl-6 text-sm font-mono text-gray-300">{s.roll_number}</td>
-                          <td className="p-4 text-sm font-medium text-white">{s.name}</td>
-                          <td className="p-4 text-sm text-gray-400">{s.class_name}</td>
+                        <tr key={s.id} className="hover:bg-muted transition-colors">
+                          <td className="p-4 pl-6 text-sm font-mono text-foreground">{s.roll_number}</td>
+                          <td className="p-4 text-sm font-medium text-foreground">{s.name}</td>
+                          <td className="p-4 text-sm text-muted-foreground">{s.class_name}</td>
                           <td className="p-4 pr-6 text-center">
                             <button onClick={() => toggleStatus(s.roll_number)}
                               className={`w-24 py-1.5 rounded-full text-xs font-bold transition-colors ${
@@ -149,17 +149,17 @@ export default function Attendance() {
             <div className="space-y-6">
               {/* Summary Card */}
               <div className="card">
-                <h3 className="text-sm font-bold text-white mb-4">Today's Summary</h3>
+                <h3 className="text-sm font-bold text-foreground mb-4">Today's Summary</h3>
                 <div className="space-y-3">
-                  <div className="flex justify-between"><span className="text-gray-400">Total</span><span className="font-bold text-white">{total}</span></div>
+                  <div className="flex justify-between"><span className="text-muted-foreground">Total</span><span className="font-bold text-foreground">{total}</span></div>
                   <div className="flex justify-between"><span className="text-green-400">Present</span><span className="font-bold text-green-400">{presentCount}</span></div>
                   <div className="flex justify-between"><span className="text-red-400">Absent</span><span className="font-bold text-red-400">{absentCount}</span></div>
                   {total > 0 && (
                     <>
-                      <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden mt-2">
+                      <div className="w-full h-2 bg-muted rounded-full overflow-hidden mt-2">
                         <div className="h-full bg-green-500 transition-all" style={{ width: `${(presentCount / total) * 100}%` }}></div>
                       </div>
-                      <div className="text-center text-sm text-gray-400">{Math.round((presentCount / total) * 100)}% attendance</div>
+                      <div className="text-center text-sm text-muted-foreground">{Math.round((presentCount / total) * 100)}% attendance</div>
                     </>
                   )}
                 </div>
@@ -167,19 +167,19 @@ export default function Attendance() {
 
               {/* Alert Rules */}
               <div className="card">
-                <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2">
-                  <AlertTriangle size={16} className="text-[#FFB800]" /> Auto-Alert Rules
+                <h3 className="text-sm font-bold text-foreground mb-4 flex items-center gap-2">
+                  <AlertTriangle size={16} className="text-accent" /> Auto-Alert Rules
                 </h3>
                 <div className="space-y-3">
                   {alertRules.map(rule => (
-                    <div key={rule.id} className="p-3 rounded-lg bg-[#222] border border-gray-800">
+                    <div key={rule.id} className="p-3 rounded-lg bg-muted border border-border">
                       <div className="flex justify-between items-center mb-1">
-                        <span className="text-sm font-medium text-white">{rule.rule_name}</span>
-                        <span className={`text-xs px-2 py-0.5 rounded-full ${rule.is_active ? 'bg-green-900/30 text-green-400' : 'bg-gray-800 text-gray-500'}`}>
+                        <span className="text-sm font-medium text-foreground">{rule.rule_name}</span>
+                        <span className={`text-xs px-2 py-0.5 rounded-full ${rule.is_active ? 'bg-green-900/30 text-green-400' : 'bg-muted text-muted-foreground'}`}>
                           {rule.is_active ? 'Active' : 'Off'}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-500">Triggers below {rule.threshold_percent}% attendance</p>
+                      <p className="text-xs text-muted-foreground">Triggers below {rule.threshold_percent}% attendance</p>
                     </div>
                   ))}
                 </div>
