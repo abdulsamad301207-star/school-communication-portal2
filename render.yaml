@@ -13,4 +13,4 @@ services:
       - key: JWT_SECRET
         value: sgei_super_secret_change_in_production
       - key: FRONTEND_URL
-        value: https://school-communication-portal.vercel.app
+        value: https://abdulsamad301207-star.github.io
