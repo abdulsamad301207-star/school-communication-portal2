@@ -3,8 +3,8 @@ import axios from 'axios';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { HelpProvider } from './context/HelpContext';
 
-// Set base URL for API — the mock backend intercepts all requests so this is just a placeholder
-axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || '';
+// Set base URL for API — real backend on Render
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || 'https://school-communication-portal2-2.onrender.com';
 
 // Detect the base path for GitHub Pages routing
 const BASE_PATH = import.meta.env.BASE_URL || '/';
