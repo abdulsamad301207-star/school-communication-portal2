@@ -36,7 +36,7 @@ export default function HelpRequests() {
             </div>
             <div className="flex items-center gap-3">
               {/* Live indicator */}
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-medium">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-100 dark:bg-green-500/10 border border-green-300 dark:border-green-500/20 text-green-700 dark:text-green-400 text-xs font-medium">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 Live · refreshes every 15s
               </div>
@@ -65,8 +65,8 @@ export default function HelpRequests() {
               <div className="text-2xl font-bold text-amber-400">{openCount}</div>
               <div className="text-xs text-muted-foreground mt-1">Open</div>
             </div>
-            <div className="bg-green-500/5 border border-green-500/20 rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-green-400">
+            <div className="bg-green-500/5 border border-green-300 dark:border-green-500/20 rounded-xl p-4 text-center">
+              <div className="text-2xl font-bold text-green-700 dark:text-green-400">
                 {helpRequests.filter(r => r.status === 'resolved').length}
               </div>
               <div className="text-xs text-muted-foreground mt-1">Resolved</div>
@@ -101,7 +101,7 @@ export default function HelpRequests() {
                             <Clock size={16} />
                           </div>
                         ) : (
-                          <div className="w-8 h-8 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center border border-green-500/20">
+                          <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-500/10 text-green-700 dark:text-green-500 flex items-center justify-center border border-green-300 dark:border-green-500/20">
                             <CheckCircle2 size={16} />
                           </div>
                         )}
@@ -130,7 +130,7 @@ export default function HelpRequests() {
                             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-colors whitespace-nowrap ${
                               req.status === 'open'
                                 ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20 hover:bg-amber-500/20'
-                                : 'bg-green-500/10 text-green-500 border border-green-500/20 hover:bg-green-500/20'
+                                : 'bg-green-100 dark:bg-green-500/10 text-green-700 dark:text-green-500 border border-green-300 dark:border-green-500/20 hover:bg-green-500/20'
                             }`}
                           >
                             {req.status === 'open' ? 'Mark Resolved' : 'Reopen'}

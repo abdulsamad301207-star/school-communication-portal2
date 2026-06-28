@@ -77,9 +77,9 @@ export default function Inbox() {
   };
 
   const getAttendanceColor = (percentage) => {
-    if (percentage >= 85) return 'text-green-500 border-green-500/20 bg-green-500/10';
+    if (percentage >= 85) return 'text-green-700 dark:text-green-500 border-green-300 dark:border-green-500/20 bg-green-100 dark:bg-green-500/10';
     if (percentage >= 75) return 'text-yellow-500 border-yellow-500/20 bg-yellow-500/10';
-    return 'text-destructive border-red-500/20 bg-destructive/10';
+    return 'text-destructive border-destructive/30 bg-destructive/10';
   };
 
   return (
@@ -152,18 +152,18 @@ export default function Inbox() {
                   <div className="flex-1 min-w-0 grid grid-cols-2 gap-3 text-center">
                     <div className="bg-muted/30 p-2.5 rounded-xl border border-border/50">
                       <div className="text-xs text-muted-foreground">Present</div>
-                      <div className="text-lg font-bold text-green-400">{attendance.stats.present} / {attendance.stats.total}</div>
+                      <div className="text-lg font-bold text-green-700 dark:text-green-400">{attendance.stats.present} / {attendance.stats.total}</div>
                     </div>
                     <div className="bg-muted/30 p-2.5 rounded-xl border border-border/50">
                       <div className="text-xs text-muted-foreground">Absent</div>
-                      <div className="text-lg font-bold text-red-400">{attendance.stats.absent}</div>
+                      <div className="text-lg font-bold text-destructive">{attendance.stats.absent}</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Progress Alert */}
                 {attendance.stats.percentage < 75 && (
-                  <div className="bg-destructive/10 border border-red-500/20 text-red-400 p-4 rounded-xl flex gap-3 items-start text-xs">
+                  <div className="bg-destructive/10 border border-destructive/30 text-destructive p-4 rounded-xl flex gap-3 items-start text-xs">
                     <AlertTriangle size={18} className="shrink-0 text-destructive" />
                     <div>
                       <span className="font-bold">Low Attendance Warning:</span> Your attendance is currently below the school's required 75% threshold. Please maintain regular attendance.
@@ -190,8 +190,8 @@ export default function Inbox() {
                           <div>
                             <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${
                               record.status === 'present' 
-                                ? 'bg-green-500/10 text-green-400 border border-green-500/20' 
-                                : 'bg-destructive/10 text-red-400 border border-red-500/20'
+                                ? 'bg-green-100 dark:bg-green-500/10 text-green-700 dark:text-green-400 border border-green-300 dark:border-green-500/20' 
+                                : 'bg-destructive/10 text-destructive border border-destructive/30'
                             }`}>
                               {record.status}
                             </span>
@@ -215,7 +215,7 @@ export default function Inbox() {
                 <HelpCircle className="text-accent" size={20} /> Contact Staff
               </h2>
               {helpSuccess && (
-                <div className="mb-4 p-3 rounded-lg bg-green-900/30 border border-green-500/50 text-green-400 text-sm flex items-center gap-2">
+                <div className="mb-4 p-3 rounded-lg bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-500/50 text-green-700 dark:text-green-400 text-sm flex items-center gap-2">
                   <CheckCircle2 size={16} /> Request sent successfully!
                 </div>
               )}
@@ -250,7 +250,7 @@ export default function Inbox() {
                 <div key={req.id} className="bg-card border border-border rounded-xl p-4">
                   <div className="flex justify-between items-start mb-2">
                     <span className={`text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded ${
-                      req.status === 'open' ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20' : 'bg-green-500/10 text-green-400 border border-green-500/20'
+                      req.status === 'open' ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20' : 'bg-green-100 dark:bg-green-500/10 text-green-700 dark:text-green-400 border border-green-300 dark:border-green-500/20'
                     }`}>{req.status}</span>
                     <span className="text-xs text-muted-foreground">{new Date(req.created_at).toLocaleDateString()}</span>
                   </div>
@@ -347,7 +347,7 @@ export default function Inbox() {
         </button>
         <button 
           onClick={handleLogout} 
-          className="flex flex-col items-center gap-1 text-destructive hover:text-red-400 transition-colors"
+          className="flex flex-col items-center gap-1 text-destructive hover:text-destructive transition-colors"
         >
           <LogOut size={20} />
           <span className="text-[10px] font-medium">Logout</span>

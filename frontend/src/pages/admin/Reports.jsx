@@ -40,7 +40,7 @@ export default function Reports() {
               <div><div className="text-sm text-muted-foreground">Total Messages</div><div className="text-2xl font-bold text-foreground">{stats.totalMessages}</div></div>
             </div>
             <div className="card flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-green-900/20 text-green-500 flex items-center justify-center"><CheckCircle size={24} /></div>
+              <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-500 flex items-center justify-center"><CheckCircle size={24} /></div>
               <div><div className="text-sm text-muted-foreground">Total Delivered</div><div className="text-2xl font-bold text-foreground">{stats.totalDelivered}</div></div>
             </div>
             <div className="card flex items-center gap-4">
@@ -82,7 +82,7 @@ export default function Reports() {
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 {Object.entries(stats.byStatus).map(([status, count]) => {
-                  const statusColors = { sent: 'border-green-700 text-green-400', scheduled: 'border-accent text-accent', draft: 'border-border text-muted-foreground', failed: 'border-red-700 text-red-400' };
+                  const statusColors = { sent: 'border-green-300 dark:border-green-700 text-green-700 dark:text-green-400', scheduled: 'border-accent text-accent', draft: 'border-border text-muted-foreground', failed: 'border-destructive/30 text-destructive' };
                   return (
                     <div key={status} className={`p-4 rounded-xl border bg-muted ${statusColors[status] || 'border-border text-muted-foreground'}`}>
                       <div className="text-3xl font-bold mb-1">{count}</div>

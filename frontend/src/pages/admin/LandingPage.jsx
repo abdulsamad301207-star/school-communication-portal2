@@ -59,17 +59,17 @@ export default function LandingPage() {
         </h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
           <div className="card">
-            <div className="w-12 h-12 rounded-lg bg-red-900/30 text-destructive flex items-center justify-center text-xl mb-6">⏱️</div>
+            <div className="w-12 h-12 rounded-lg bg-destructive/10 text-destructive flex items-center justify-center text-xl mb-6">⏱️</div>
             <h3 className="text-xl font-bold mb-3">Calling wastes hours</h3>
             <p className="text-muted-foreground leading-relaxed">Staff spend entire mornings on the phone for every exam or fee notice.</p>
           </div>
           <div className="card">
-            <div className="w-12 h-12 rounded-lg bg-red-900/30 text-destructive flex items-center justify-center text-xl mb-6">💬</div>
+            <div className="w-12 h-12 rounded-lg bg-destructive/10 text-destructive flex items-center justify-center text-xl mb-6">💬</div>
             <h3 className="text-xl font-bold mb-3">WhatsApp gets cluttered</h3>
             <p className="text-muted-foreground leading-relaxed">Important notices get buried under photos and unrelated messages.</p>
           </div>
           <div className="card">
-            <div className="w-12 h-12 rounded-lg bg-red-900/30 text-destructive flex items-center justify-center text-xl mb-6">📉</div>
+            <div className="w-12 h-12 rounded-lg bg-destructive/10 text-destructive flex items-center justify-center text-xl mb-6">📉</div>
             <h3 className="text-xl font-bold mb-3">No delivery records</h3>
             <p className="text-muted-foreground leading-relaxed">No way to prove a parent was notified. Disputes arise constantly.</p>
           </div>

@@ -6,7 +6,7 @@ export default function StatsCard({ title, value, icon: Icon, color, trend }) {
   let iconClass = "text-muted-foreground";
   
   if (color === 'blue') { bgClass = "bg-blue-900/20"; iconClass = "text-blue-500"; }
-  if (color === 'green') { bgClass = "bg-green-900/20"; iconClass = "text-green-500"; }
+  if (color === 'green') { bgClass = "bg-green-100 dark:bg-green-900/20"; iconClass = "text-green-700 dark:text-green-500"; }
   if (color === 'purple') { bgClass = "bg-accent/10"; iconClass = "text-accent"; }
   if (color === 'amber') { bgClass = "bg-primary/10"; iconClass = "text-primary"; }
 
@@ -20,7 +20,7 @@ export default function StatsCard({ title, value, icon: Icon, color, trend }) {
         <div className="text-3xl font-bold text-foreground">{value}</div>
       </div>
       {trend && (
-        <div className={`text-xs font-medium flex items-center gap-1 self-end mb-1 ${trend > 0 ? 'text-green-500' : 'text-destructive'}`}>
+        <div className={`text-xs font-medium flex items-center gap-1 self-end mb-1 ${trend > 0 ? 'text-green-700 dark:text-green-500' : 'text-destructive'}`}>
           {trend > 0 ? <ArrowUpRight size={14} /> : <ArrowDownRight size={14} />}
           {Math.abs(trend)}%
         </div>

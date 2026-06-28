@@ -73,7 +73,7 @@ export default function Attendance() {
         <TopBar title="Attendance" />
         <div className="p-8">
           {saved && (
-            <div className="mb-6 p-4 rounded-xl bg-green-900/30 border border-green-700 text-green-400 flex items-center gap-3">
+            <div className="mb-6 p-4 rounded-xl bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700 text-green-700 dark:text-green-400 flex items-center gap-3">
               <Check size={20} /> Attendance saved successfully!
             </div>
           )}
@@ -95,8 +95,8 @@ export default function Attendance() {
                     <input type="date" value={date} onChange={e => setDate(e.target.value)} className="input-field w-auto" />
                   </div>
                   <div className="flex gap-2 ml-auto items-end">
-                    <button onClick={() => markAll('present')} className="btn-secondary h-10 text-xs text-green-400 border-green-800 hover:bg-green-900/20">Mark All Present</button>
-                    <button onClick={() => markAll('absent')} className="btn-secondary h-10 text-xs text-red-400 border-red-800 hover:bg-red-900/20">Mark All Absent</button>
+                    <button onClick={() => markAll('present')} className="btn-secondary h-10 text-xs text-green-700 dark:text-green-400 border-green-300 dark:border-green-800 hover:bg-green-100 dark:bg-green-900/20">Mark All Present</button>
+                    <button onClick={() => markAll('absent')} className="btn-secondary h-10 text-xs text-destructive border-destructive/30 hover:bg-destructive/10">Mark All Absent</button>
                   </div>
                 </div>
               </div>
@@ -126,8 +126,8 @@ export default function Attendance() {
                             <button onClick={() => toggleStatus(s.roll_number)}
                               className={`w-24 py-1.5 rounded-full text-xs font-bold transition-colors ${
                                 status === 'present' 
-                                  ? 'bg-green-900/30 text-green-400 border border-green-800 hover:bg-green-900/50' 
-                                  : 'bg-red-900/30 text-red-400 border border-red-800 hover:bg-red-900/50'
+                                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border border-green-300 dark:border-green-800 hover:bg-green-200 dark:hover:bg-green-900/50' 
+                                  : 'bg-destructive/10 text-destructive border border-destructive/30 hover:bg-destructive/20'
                               }`}>
                               {status === 'present' ? '✓ Present' : '✗ Absent'}
                             </button>
@@ -152,8 +152,8 @@ export default function Attendance() {
                 <h3 className="text-sm font-bold text-foreground mb-4">Today's Summary</h3>
                 <div className="space-y-3">
                   <div className="flex justify-between"><span className="text-muted-foreground">Total</span><span className="font-bold text-foreground">{total}</span></div>
-                  <div className="flex justify-between"><span className="text-green-400">Present</span><span className="font-bold text-green-400">{presentCount}</span></div>
-                  <div className="flex justify-between"><span className="text-red-400">Absent</span><span className="font-bold text-red-400">{absentCount}</span></div>
+                  <div className="flex justify-between"><span className="text-green-700 dark:text-green-400">Present</span><span className="font-bold text-green-700 dark:text-green-400">{presentCount}</span></div>
+                  <div className="flex justify-between"><span className="text-destructive">Absent</span><span className="font-bold text-destructive">{absentCount}</span></div>
                   {total > 0 && (
                     <>
                       <div className="w-full h-2 bg-muted rounded-full overflow-hidden mt-2">
@@ -175,7 +175,7 @@ export default function Attendance() {
                     <div key={rule.id} className="p-3 rounded-lg bg-muted border border-border">
                       <div className="flex justify-between items-center mb-1">
                         <span className="text-sm font-medium text-foreground">{rule.rule_name}</span>
-                        <span className={`text-xs px-2 py-0.5 rounded-full ${rule.is_active ? 'bg-green-900/30 text-green-400' : 'bg-muted text-muted-foreground'}`}>
+                        <span className={`text-xs px-2 py-0.5 rounded-full ${rule.is_active ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400' : 'bg-muted text-muted-foreground'}`}>
                           {rule.is_active ? 'Active' : 'Off'}
                         </span>
                       </div>

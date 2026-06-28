@@ -34,7 +34,7 @@ export default function Settings() {
         <TopBar title="Settings" />
         <div className="p-8 max-w-4xl">
           {saved && (
-            <div className="mb-6 p-4 rounded-xl bg-green-900/30 border border-green-700 text-green-400 flex items-center gap-3">
+            <div className="mb-6 p-4 rounded-xl bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700 text-green-700 dark:text-green-400 flex items-center gap-3">
               <Check size={20} /> Settings saved successfully!
             </div>
           )}
