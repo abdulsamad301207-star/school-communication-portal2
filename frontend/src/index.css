@@ -30,25 +30,25 @@
   }
 
   .dark {
-    /* Dark Mode Tokens (Brick Red, Gold) */
-    --background: 0 64% 17%;        /* Vibrant Dark Brick Red */
-    --foreground: 40 38% 93%;       /* Warm White Text */
-    --card: 0 64% 21%;              /* Slightly Lighter Brick Red */
-    --card-foreground: 40 38% 93%;
-    --popover: 0 64% 21%;
-    --popover-foreground: 40 38% 93%;
+    /* Dark Mode Tokens (Warm Black, Gold) */
+    --background: 0 27% 8%;         /* Black with a little red */
+    --foreground: 0 0% 100%;        /* White */
+    --card: 0 26% 11%;              /* Slightly Lighter Warm Black */
+    --card-foreground: 0 0% 100%;
+    --popover: 0 26% 11%;
+    --popover-foreground: 0 0% 100%;
     --primary: 46 65% 52%;          /* Gold */
-    --primary-foreground: 0 64% 17%;
-    --secondary: 0 64% 13%;         /* Darker Brick Red */
-    --secondary-foreground: 40 38% 93%;
-    --muted: 0 64% 13%;             /* Muted Dark Brick */
-    --muted-foreground: 40 20% 65%;
+    --primary-foreground: 0 27% 8%;
+    --secondary: 0 24% 16%;         /* Muted Warm Black */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 24% 16%;             /* Muted Warm Black */
+    --muted-foreground: 0 0% 70%;   /* Muted White */
     --accent: 46 65% 52%;           /* Gold */
-    --accent-foreground: 0 64% 17%;
+    --accent-foreground: 0 27% 8%;
     --destructive: 0 80% 60%;
-    --destructive-foreground: 40 38% 93%;
-    --border: 0 64% 25%;
-    --input: 0 64% 25%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 24% 20%;
+    --input: 0 24% 20%;
     --ring: 46 65% 52%;
   }
 
