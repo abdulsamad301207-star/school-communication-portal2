@@ -3,8 +3,11 @@ import axios from 'axios';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { HelpProvider } from './context/HelpContext';
 
-// Set base URL for API
-axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+// Set base URL for API — the mock backend intercepts all requests so this is just a placeholder
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || '';
+
+// Detect the base path for GitHub Pages routing
+const BASE_PATH = import.meta.env.BASE_URL || '/';
 
 // Admin Pages
 import LandingPage from './pages/admin/LandingPage';
@@ -80,7 +83,7 @@ function AppRoutes() {
 export default function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={BASE_PATH}>
         <HelpProvider>
           <AppRoutes />
         </HelpProvider>
