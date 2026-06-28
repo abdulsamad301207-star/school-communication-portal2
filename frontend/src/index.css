@@ -6,50 +6,50 @@
 
 @layer base {
   :root {
-    /* Light Mode Tokens (Crisp, High Integrity) */
-    --background: 240 10% 98%;      /* #F8FAFC */
-    --foreground: 240 10% 10%;      /* #1A1A1A */
-    --card: 0 0% 100%;              /* #FFFFFF */
-    --card-foreground: 240 10% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 10%;
-    --primary: 244 47% 20%;         /* #1E1B4B (Navy) */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 240 5% 90%;
-    --secondary-foreground: 244 47% 20%;
-    --muted: 240 5% 94%;
-    --muted-foreground: 240 5% 45%;
-    --accent: 25 95% 53%;           /* #F97316 (Orange) */
-    --accent-foreground: 0 0% 100%;
+    /* Light Mode Tokens (Dull White, Brown, Sand Red) */
+    --background: 40 25% 93%;       /* Dull White */
+    --foreground: 20 17% 14%;       /* Dark Brown Text */
+    --card: 40 33% 99%;             /* Off-white */
+    --card-foreground: 20 17% 14%;
+    --popover: 40 33% 99%;
+    --popover-foreground: 20 17% 14%;
+    --primary: 20 33% 27%;          /* Brown */
+    --primary-foreground: 40 25% 93%;
+    --secondary: 20 20% 85%;        /* Light Brown */
+    --secondary-foreground: 20 33% 27%;
+    --muted: 40 18% 87%;            /* Dull Beige */
+    --muted-foreground: 20 15% 45%;
+    --accent: 15 49% 47%;           /* Sand Red */
+    --accent-foreground: 40 25% 93%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 240 6% 85%;
-    --input: 240 6% 85%;
-    --ring: 244 47% 20%;
+    --destructive-foreground: 40 25% 93%;
+    --border: 40 15% 82%;
+    --input: 40 15% 82%;
+    --ring: 20 33% 27%;
     --radius: 0.75rem;
   }
 
   .dark {
-    /* Dark Mode Tokens (Deep, Professional) */
-    --background: 240 40% 7%;       /* #0F0F16 */
-    --foreground: 240 5% 96%;       /* #F5F5F5 */
-    --card: 240 25% 12%;            /* #171723 */
-    --card-foreground: 240 5% 96%;
-    --popover: 240 25% 12%;
-    --popover-foreground: 240 5% 96%;
-    --primary: 244 60% 45%;         /* Brighter Navy/Blue for dark mode */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 240 20% 18%;
-    --secondary-foreground: 240 5% 96%;
-    --muted: 240 20% 15%;
-    --muted-foreground: 240 5% 65%;
-    --accent: 25 95% 53%;           /* #F97316 (Orange) */
-    --accent-foreground: 0 0% 100%;
+    /* Dark Mode Tokens (Deep Sand Red, Gold) */
+    --background: 9 16% 9%;         /* Deep Sand Red */
+    --foreground: 40 38% 93%;       /* Warm White Text */
+    --card: 9 15% 13%;              /* Darker Sand Red */
+    --card-foreground: 40 38% 93%;
+    --popover: 9 15% 13%;
+    --popover-foreground: 40 38% 93%;
+    --primary: 46 65% 52%;          /* Gold */
+    --primary-foreground: 9 16% 9%; /* Deep Sand Red */
+    --secondary: 9 13% 21%;         /* Muted Red/Brown */
+    --secondary-foreground: 40 38% 93%;
+    --muted: 9 13% 21%;             /* Muted Sand */
+    --muted-foreground: 40 20% 65%;
+    --accent: 46 65% 52%;           /* Gold */
+    --accent-foreground: 9 16% 9%;
     --destructive: 0 80% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 240 20% 22%;
-    --input: 240 20% 22%;
-    --ring: 244 60% 45%;
+    --destructive-foreground: 40 38% 93%;
+    --border: 9 15% 25%;
+    --input: 9 15% 25%;
+    --ring: 46 65% 52%;
   }
 
   * {
