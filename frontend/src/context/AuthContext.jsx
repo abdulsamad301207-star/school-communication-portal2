@@ -14,6 +14,8 @@ export const AuthProvider = ({ children }) => {
       setUser(data.user);
       axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
     }
+    // Bypass localtunnel warning screen for API calls
+    axios.defaults.headers.common['Bypass-Tunnel-Reminder'] = 'true';
     setLoading(false);
   }, []);
 
