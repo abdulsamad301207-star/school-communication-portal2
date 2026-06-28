@@ -80,7 +80,7 @@ export default function PortalLogin() {
           <motion.div variants={fadeInUp} className="w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 text-primary rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-inner border border-primary/20">
             <GraduationCap size={40} />
           </motion.div>
-          <motion.h2 variants={fadeInUp} className="text-3xl font-bold font-heading text-foreground mb-2 tracking-tight">Access Portal</motion.div>
+          <motion.h2 variants={fadeInUp} className="text-3xl font-bold font-heading text-foreground mb-2 tracking-tight">Access Portal</motion.h2>
           <motion.p variants={fadeInUp} className="text-muted-foreground font-medium">Enter your registered credentials</motion.p>
         </motion.div>
 
