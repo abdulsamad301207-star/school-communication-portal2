@@ -6,21 +6,21 @@
 
 @layer base {
   :root {
-    /* Light Mode Tokens (Dull White, Brown, Forest Green) */
+    /* Light Mode Tokens (Dull White, Black Text, Forest Green) */
     --background: 40 25% 93%;       /* Dull White */
-    --foreground: 20 17% 14%;       /* Dark Brown Text */
+    --foreground: 0 0% 5%;          /* Near Black Text for max contrast */
     --card: 40 33% 99%;             /* Off-white */
-    --card-foreground: 20 17% 14%;
+    --card-foreground: 0 0% 5%;
     --popover: 40 33% 99%;
-    --popover-foreground: 20 17% 14%;
+    --popover-foreground: 0 0% 5%;
     --primary: 162 48% 20%;         /* Forest Green */
     --primary-foreground: 40 25% 93%;
     --secondary: 20 20% 85%;        /* Light Brown */
     --secondary-foreground: 162 48% 20%;
     --muted: 40 18% 87%;            /* Dull Beige */
-    --muted-foreground: 20 15% 45%;
+    --muted-foreground: 0 0% 35%;   /* Dark Gray for muted text */
     --accent: 140 40% 75%;          /* Light Green Accent */
-    --accent-foreground: 20 17% 14%;
+    --accent-foreground: 0 0% 5%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 40 25% 93%;
     --border: 40 15% 82%;
