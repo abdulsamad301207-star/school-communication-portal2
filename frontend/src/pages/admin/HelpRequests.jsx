@@ -136,6 +136,22 @@ export default function HelpRequests() {
                             {req.status === 'open' ? 'Mark Resolved' : 'Reopen'}
                           </button>
                         </div>
+
+                        {/* Sender Details Card */}
+                        <div className="bg-[#161616] border border-gray-800 rounded-lg p-3 mb-3 flex flex-wrap gap-x-6 gap-y-1 text-xs">
+                          <div><span className="text-gray-500">From:</span> <span className="text-gray-200 font-medium">{req.user_name}</span></div>
+                          <div><span className="text-gray-500">Role:</span> <span className="text-gray-200 capitalize">{req.user_role?.replace('_', ' ')}</span></div>
+                          {req.user_email && req.user_email !== 'N/A' && (
+                            <div><span className="text-gray-500">Email:</span> <span className="text-blue-400">{req.user_email}</span></div>
+                          )}
+                          {req.user_phone && req.user_phone !== 'N/A' && req.user_phone !== '' && (
+                            <div><span className="text-gray-500">Phone:</span> <span className="text-gray-200">{req.user_phone}</span></div>
+                          )}
+                          {req.student_name && (
+                            <div><span className="text-gray-500">Student:</span> <span className="text-[#FFB800] font-medium">{req.student_name}</span> <span className="text-gray-500">({req.student_class} · {req.student_roll})</span></div>
+                          )}
+                        </div>
+
                         <div className="bg-[#111] border border-gray-800 rounded-xl p-4 text-sm text-gray-300 whitespace-pre-wrap">
                           {req.message}
                         </div>
