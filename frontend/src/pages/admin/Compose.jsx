@@ -155,7 +155,7 @@ export default function Compose() {
                       <input type="checkbox" checked={selectedGroups.includes(g.id)} onChange={() => toggleGroup(g.id)}
                         className="w-4 h-4 rounded accent-primary" />
                       <div className="flex-1 min-w-0">
-                        <div className="text-sm font-medium text-gray-200 truncate">{g.name}</div>
+                        <div className="text-sm font-medium text-foreground truncate">{g.name}</div>
                         <div className="text-xs text-muted-foreground">{g.member_count} members</div>
                       </div>
                     </label>
@@ -175,7 +175,7 @@ export default function Compose() {
                   {templates.slice(0, 4).map(t => (
                     <button key={t.id} onClick={() => applyTemplate(t)}
                       className="w-full text-left p-3 rounded-lg bg-muted hover:brightness-110 border border-border transition-colors">
-                      <div className="text-sm font-medium text-gray-200 truncate">{t.name}</div>
+                      <div className="text-sm font-medium text-foreground truncate">{t.name}</div>
                       <div className="text-xs text-muted-foreground mt-1 capitalize">{t.message_type}</div>
                     </button>
                   ))}

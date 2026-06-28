@@ -139,13 +139,13 @@ export default function HelpRequests() {
 
                         {/* Sender Details Card */}
                         <div className="bg-card border border-border rounded-lg p-3 mb-3 flex flex-wrap gap-x-6 gap-y-1 text-xs">
-                          <div><span className="text-muted-foreground">From:</span> <span className="text-gray-200 font-medium">{req.user_name}</span></div>
-                          <div><span className="text-muted-foreground">Role:</span> <span className="text-gray-200 capitalize">{req.user_role?.replace('_', ' ')}</span></div>
+                          <div><span className="text-muted-foreground">From:</span> <span className="text-foreground font-medium">{req.user_name}</span></div>
+                          <div><span className="text-muted-foreground">Role:</span> <span className="text-foreground capitalize">{req.user_role?.replace('_', ' ')}</span></div>
                           {req.user_email && req.user_email !== 'N/A' && (
                             <div><span className="text-muted-foreground">Email:</span> <span className="text-blue-400">{req.user_email}</span></div>
                           )}
                           {req.user_phone && req.user_phone !== 'N/A' && req.user_phone !== '' && (
-                            <div><span className="text-muted-foreground">Phone:</span> <span className="text-gray-200">{req.user_phone}</span></div>
+                            <div><span className="text-muted-foreground">Phone:</span> <span className="text-foreground">{req.user_phone}</span></div>
                           )}
                           {req.student_name && (
                             <div><span className="text-muted-foreground">Student:</span> <span className="text-accent font-medium">{req.student_name}</span> <span className="text-muted-foreground">({req.student_class} · {req.student_roll})</span></div>

@@ -104,7 +104,7 @@ export default function Inbox() {
             <div className="space-y-3">
               {messages.length === 0 ? (
                 <div className="text-center p-12 text-muted-foreground bg-card rounded-2xl border border-border">
-                  <FileText className="mx-auto mb-3 text-gray-600" size={32} />
+                  <FileText className="mx-auto mb-3 text-muted-foreground" size={32} />
                   No messages yet.
                 </div>
               ) : messages.map(msg => (
@@ -128,7 +128,7 @@ export default function Inbox() {
                     </h3>
                     <p className="text-xs text-muted-foreground truncate" dangerouslySetInnerHTML={{ __html: msg.body_html?.replace(/<[^>]*>/g, '') || '' }} />
                   </div>
-                  <div className="flex items-center text-gray-600">
+                  <div className="flex items-center text-muted-foreground">
                     <ChevronRight size={16} />
                   </div>
                 </div>

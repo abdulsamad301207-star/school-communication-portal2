@@ -110,7 +110,7 @@ export default function PortalLogin() {
 
       <div className="mt-8 flex items-center justify-center gap-6 text-sm text-muted-foreground">
         <Link to="/" className="hover:text-foreground transition-colors">← Back to Home</Link>
-        <span className="text-gray-700">|</span>
+        <span className="text-muted-foreground">|</span>
         <span>Staff? <Link to="/admin-login" className="text-primary hover:text-destructive font-medium">Admin Login</Link></span>
       </div>
     </div>

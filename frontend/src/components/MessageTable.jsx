@@ -47,7 +47,7 @@ export default function MessageTable({ messages, showPagination = false }) {
                     onClick={() => toggleExpand(msg.id)}
                   >
                     <td className="p-4 pl-6">
-                      <div className="font-medium text-gray-200">{msg.subject}</div>
+                      <div className="font-medium text-foreground">{msg.subject}</div>
                       <div className="text-xs text-muted-foreground mt-1 uppercase tracking-wider">{getFormatType(msg.message_type)}</div>
                     </td>
                     <td className="p-4 text-sm text-muted-foreground">
